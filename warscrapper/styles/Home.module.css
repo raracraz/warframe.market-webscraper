@@ -1,45 +1,39 @@
-
-
 .main {
-  min-height: 100vh;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  background-color: linear-gradient(90deg, #1B1D52 0%, #612525 100%);
 }
 
-.image {
-  float: inline-start;
-}
-
-.gradientbox {
-  background: linear-gradient(90deg, #1B1D52 0%, #612525 100%);
-  width: 100%;
-  height:40%;
+.image{
+  /* add float so that .curvegradient can overlap */
   position: absolute;
-  margin-top: 36.5%;
-  z-index: 2;
+  width: 100%;
+  height: 100%;
+  /* only change the border radius of the bottom left corner */
+  border-radius: 0 0 0 25%;
 }
 
 .bluefilter {
+  /* add float so that .curvegradient can overlap */
+  position: absolute;
   background: #1B1D52;
   width: 100%;
-  height:112%;
-  position: absolute;
+  height: 99.5%;
   z-index: 1;
   opacity: 0.4;
+  border-radius: 0 0 0 25%;
 }
-
 
 .footer {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 25% 10% 10% 10% 10% 10% 10% 10% 10%;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
   justify-content: center;
   align-items: center;
   background-color: #212121;
+  /* footer should always be at the bottom */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 .copyright {
   color: #ffffff;

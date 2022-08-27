@@ -25,12 +25,10 @@ export default function Home() {
             </Head>
 
             <main className={styles.main}>
-                <Image className={styles.image} src="/wrBg2.jpg" alt="War Scrapper Background" width={1920} height={1080} />
-                
                 <div className={styles.bluefilter}></div>
-                
-                <div className={styles.gradientbox}></div>
-                
+
+                <Image className={styles.image} src="/wrBg2.jpg" alt="War Scrapper Background" width={1920} height={590} />
+
             </main>
 
             <footer className={styles.footer}>
