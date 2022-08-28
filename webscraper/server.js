@@ -112,5 +112,6 @@ app.get('/item/:item_name', function(req,res) {
 
         }).catch(function (error) { 
             console.log(error);
+            res.status(500).send("Error");
         })
 });
