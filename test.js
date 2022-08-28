@@ -1,0 +1,8 @@
+a = 'JWT=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaWQiOiJBT0dldTJUTTJabUdtdVhpTVFFV05zeEswYXdsQmVqVCIsImV4cCI6MTY2Njg0NDcxOSwiaWF0IjoxNjYxNjYwNzE5LCJpc3MiOiJqd3QiLCJhdWQiOiJqd3QiLCJhdXRoX3R5cGUiOiJjb29raWUifQ.Xnc6NHcT2uZ7HkGg4AM2ytCL8yoC9FJbhxiaQTjeJBg'
+b= 'JWT=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaWQiOiJBT0dldTJUTTJabUdtdVhpTVFFV05zeEswYXdsQmVqVCIsImV4cCI6MTY2Njg0NDQ3MiwiaWF0IjoxNjYxNjYwNDcyLCJpc3MiOiJqd3QiLCJhdWQiOiJqd3QiLCJhdXRoX3R5cGUiOiJjb29raWUifQ.diQ2qLvK-KWJpsgUTwQyJbV3JjjN1LOsqMP5uIe0Cuw'
+
+if(a == b){
+    console.log('true')
+} else {
+    console.log('false')
+}

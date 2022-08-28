@@ -3,14 +3,22 @@ const axios = require('axios').default;
 const fs = require('fs');
 const express=require('express');
 var app=express();
+const fork = require('child_process').fork;
+
+//FUNCTIONS
+//function itemValidation(item_name){
+    
+//}
 
 //SERVER INITIALISATION
 var port = 8081;
 var server = app.listen(port,function(){
+    var child = fork('./data/data_checker.js');
     console.log("App hosted at localhost:"+port); 
 });
 
 //ROUTES
+//get one item based on item name
 app.get('/item/:item_name', function(req,res) {
     //get item name from request params
     var item_name = req.params.item_name;
@@ -20,7 +28,9 @@ app.get('/item/:item_name', function(req,res) {
     //initialise url for axios request
     var warframe_market_url = 'https://api.warframe.market/v1/items/' + item_name + '/orders';
     var options = {
-        headers: {Platform: 'pc'}
+        headers: {
+            Platform: 'pc'
+        }
     };
 
     // write JSON string to a file
@@ -113,5 +123,15 @@ app.get('/item/:item_name', function(req,res) {
         }).catch(function (error) { 
             console.log(error);
             res.status(500).send("Error");
+        })
+});
+
+//get all items
+app.get('/item/all', function(req,res) {
+    axios.get('https://api.warframe.market/v1/items')
+        .then(function (response) {
+            res.send(response.data);
+        }).catch(function (error) {
+            console.log(error);
         })
 });
