@@ -3,65 +3,59 @@ const fs = require('fs');
 const express = require('express');
 var app = express();
 
+// var itemJson = {
+//   "quantity": 50,
+//   "order_type": "sell",
+//   "platinum": 1,
+//   "user": {
+//     "ingame_name": "TalesNexus",
+//     "status": "ingame"
+//   },
+//   "platform": "pc",
+//   "region": "en",
+//   "mod_rank": 0
+// };
+
+var returnJson = {};
+
+// make a json object with itemJson as the template
+function makeItemJson(quantity, order_type, platinum, ingame_name, status, platform, region, mod_rank) {
+  var itemJson = {
+    "quantity": quantity,
+    "order_type": order_type,
+    "platinum": platinum,
+    "user": {
+      "ingame_name": ingame_name,
+      "status": status
+    },
+    "platform": platform,
+    "region": region,
+    "mod_rank": mod_rank
+  };
+  return itemJson;
+}
+
 export default (req, res) => {
   var { query: { item_name } } = req
   item_name = item_name.toLowerCase();
   item_name = item_name.replace(/ /g, '_');
 
   const warframe_market_url = 'https://api.warframe.market/v1/items/' + item_name + '/orders';
-  var options = {
-    headers: { Platform: 'pc' }
-  };
-
-  var append_data = '';
-
-  //average and cheepest price
-  var total_price = 0;
-  var total_orders = 0;
-  var cheapest_price = 0;
+  var options = { headers: { Platform: 'pc' } };
 
   //axios request
   axios.get(warframe_market_url, options)
     .then(function (response) {
-      //store response in variable
       var unfiltered_orders = response.data.payload.orders;
-
-      //progress bar
-      var totallength = unfiltered_orders.length;
       var counter = 1;
+      var y = 0;
 
       //filter orders
       for (var i = 0; i < unfiltered_orders.length; i++) {
-        //progress bar display
-        //console.log("Progress: " + counter + "/" + totallength);
-        //console.log("");
-
         //set current order to variable order
         var order = unfiltered_orders[i];
-
-        //check if uder is online in game
-        if (order.user.status != 'ingame') { //change to offline/online/ingame to filter accordingly
-          counter++;
-          continue;
-          //check if order is a sell order
-        } else if (order.order_type != 'sell') {
-          counter++;
-          continue;
-          //check if order is for the correct region
-        } else if (order.region != 'en') {
-          counter++;
-          continue;
-        } else {
-          counter++;
-
-          //price calculation
-          total_price += order.platinum; //add price to total price
-          total_orders++; //add order to total orders
-          if (order.platinum < cheapest_price || cheapest_price == 0) { //check if price is cheaper than cheapest price
-            cheapest_price = order.platinum;
-          };
-          var ingame_name = order.user.ingame_name; //get ingame name
-
+        // check status is "ingame", order_type is "sell", and region is "en"
+        if (order.user.status == 'ingame' && order.order_type == 'sell' && order.region == 'en') {
           //remove unwanted information from order
           delete order.visible;
           delete order.user.reputation;
@@ -73,25 +67,31 @@ export default (req, res) => {
           delete order.last_update;
           delete order.id;
 
-          //add order to append_data
-          var data = JSON.stringify(order, null, 4);
-          append_data = append_data + '"order' + String(i + 1) + '": ' + data + ',\n';
-        };
+          // use the makeItemJson function to make a json object with the order data
+          var itemJson = makeItemJson(order.quantity, order.order_type, order.platinum, order.user.ingame_name, order.user.status, order.platform, order.region, order.mod_rank);
+
+          // append all itemJson objects to a json array called returnJson
+          returnJson[y] = itemJson;
+          y++;
+        }
       };
-      //remove last comma from append_data
-      append_data = append_data.substring(0, append_data.length - 2);
-
-      //pricing calculation
-      var average_price = (total_price / total_orders).toFixed(2); //calculate average price
-
-      //format pricing information as JSON string
-      var pricing = '{\n"pricing": {\n\t"average price": ' + average_price + ',\n\t"cheapest_price": ' + cheapest_price + ',\n\t"ingame_name": "' + ingame_name + '"\n},\n';
-
-      //return success code to client
-      res.status(200).send(pricing + append_data + '\n}');
-
-    }).catch(function (error) {
+      let size = 0, key;
+      for (key in returnJson) {
+        if (returnJson.hasOwnProperty(key)) size++;
+      }
+      // console.log(size)
+      var tableDataList = [];
+      var dataLength = size - 1;
+      for (var i = 0; i < dataLength; i++) {
+        tableDataList.push({ 'username': returnJson[i].user.ingame_name, 'platinum': returnJson[i].platinum, 'quantity': returnJson[i].quantity, 'mod_rank': returnJson[i].mod_rank })
+      }
+      // // alert(JSON.stringify(tableDataList))
+      tableDataList = JSON.stringify(tableDataList)
+      // res.status(200).send(dataLength);
+      res.status(200).send(tableDataList);
+    })
+    .catch(function (error) {
       console.log(error);
-      res.status(500).send("Error");
+      res.status(500).send(error);
     })
 };

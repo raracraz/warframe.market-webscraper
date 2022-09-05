@@ -1,37 +1,51 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Listing.module.css'
 import React from 'react'
 import { useRouter } from 'next/router'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import DataTable from 'react-data-table-component';
+
+import { AxiosProvider, Request, Get, Delete, AxiosHead, Post, Put, Patch, withAxios } from 'react-axios'
 
 export default function Listing() {
-    const getApiData = async (item_names) => {
-        const response = await fetch('http://localhost:3000/api/items/' + item_names);
-        const data = await response.json()
-        return data
-    }
-    const returnData = () => {
-        // get value of searchvalue from query parameter with the name searchvalue
-        const router = useRouter()
-        const { searchvalue } = router.query
-        console.log(searchvalue)
-        const data = getApiData(searchvalue)
+    const router = useRouter();
+    var { searchvalue } = router.query;
 
-        if (data == null) alert("No data found")
-        else console.log(data)
-
-        return data
-    }
-
-    returnData()
+    if (searchvalue === undefined) return null;
+    // fetch data from api using axios
+    var axiosURL = 'http://localhost:3000/api/items/' + searchvalue;
+    const columns = [
+        {
+            name: 'Username',
+            selector: 'username',
+        },
+        {
+            name: 'Platinum',
+            selector: 'platinum',
+            sortable: true,
+        },
+        {
+            name: 'Quantity',
+            selector: 'quantity',
+            sortable: true,
+        },
+        {
+            name: 'Mod Rank',
+            selector: 'mod_rank',
+            sortable: true,
+        },
+    ];
     return (
         <div className={styles.container}>
             <Head>
                 <title>War Scrapper</title>
                 <meta name="description" content="A website to get the lowest prices of items for trading" />
                 <link rel="icon" href="/favicon.ico" />
+                <link
+                    href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+                    rel="stylesheet"
+                />
             </Head>
             <nav className={styles.navbar}>
                 <Image className={styles.logo} src="/favicon.ico" alt="War Scrapper Logo" width={60} height={60} />
@@ -41,7 +55,34 @@ export default function Listing() {
                 </div>
             </nav>
             <main className={styles.main}>
-
+                <Get url={axiosURL} >
+                    {(error, response, isLoading, makeRequest, axios) => {
+                        if (error) {
+                            return (<div>Something bad happened: {error.message}</div>)
+                        }
+                        else if (isLoading) {
+                            return (<div>Loading...</div>)
+                        }
+                        else if (response !== null) {
+                            return (
+                                <div className={styles.gridTable}>
+                                    <DataTable
+                                        title={searchvalue}
+                                        columns={columns}
+                                        data={response.data}
+                                        // set pagination to true and limit to 5 rows
+                                        pagination
+                                        paginationPerPage={5}
+                                        highlightOnHover={true}
+                                        // change style to striped
+                                        striped={true}
+                                    />
+                                </div>
+                            )
+                        }
+                        return (<div>Default message before request is made.</div>)
+                    }}
+                </Get>
             </main>
             <footer className={styles.footer}>
                 <div className={styles.copyright}>

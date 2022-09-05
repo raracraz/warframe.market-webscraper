@@ -1,4 +1,4 @@
-.navbar{
+.navbar {
   background-color: #1B1D52;
   position: fixed;
   z-index: 6;
@@ -6,15 +6,15 @@
   max-height: 5em;
 }
 
-.logo{
+.logo {
   padding: 1em;
 }
 
-.navbar__links{
+.navbar__links {
   float: right;
 }
 
-.navbar__link{
+.navbar__link {
   padding: 1em;
   color: #ffffff;
   text-decoration: none;
@@ -30,7 +30,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.navbar__link:hover{
+.navbar__link:hover {
   color: #636363;
   /* ease in ease out */
   transition: all 0.3s ease-in-out;
@@ -41,11 +41,11 @@
   background-color: linear-gradient(90deg, #1B1D52 0%, #612525 100%);
 }
 
-.imageBody{
+.imageBody {
   display: grid;
 }
 
-.image{
+.image {
   /* add float so that .curvegradient can overlap */
   width: 100%;
   height: 100%;
@@ -56,7 +56,7 @@
   float: right;
 }
 
-.search{
+.search {
   z-index: 5;
   grid-row: 1;
   grid-column: 1;
@@ -65,28 +65,28 @@
   position: absolute;
 }
 
-.header{
+.header {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.title{
+.title {
   font-size: 3em;
   font-family: "montserrat", sans-serif;
   font-weight: 600;
   color: #84BCFF;
 }
 
-.description{
+.description {
   color: white;
   font-size: 1.3em;
   padding: 0.3em;
   padding-bottom: 1em;
 }
 
-.searchbar__input{
+.searchbar__input {
   background-color: #ffffff;
   color: black;
   border: none;
@@ -100,7 +100,7 @@
   border-bottom-left-radius: 5px;
 }
 
-.searchbar__button{
+.searchbar__button {
   background-color: #252875;
   color: #ffffff;
   border: none;
@@ -116,7 +116,7 @@
   transition: all 0.2s ease-in-out;
 }
 
-.searchbar__button:hover{
+.searchbar__button:hover {
   background-color: #636363;
   /* ease in ease out */
   transition: all 0.2s ease-in-out;
@@ -125,31 +125,30 @@
 }
 
 .footer {
-  display: grid;
-  grid-template-columns: 25% 10% 10% 10% 10% 10% 10% 10% 10%;
-  padding: 2rem 0;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  padding: 2rem;
   background-color: #212121;
   /* footer should always be at the bottom */
   position: absolute;
   bottom: 0;
   width: 100%;
 }
+
 .copyright {
   color: #ffffff;
-  grid-column: 1;
-  text-align: center;
+  flex: 1;
 }
 
 .tos {
   color: #636363;
-  grid-column: 2;
-  text-align: center;
+  float: right;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
 
 .warframemarket {
   color: #636363;
-  grid-column: 3;
-  text-align: center;
+  float: right;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
