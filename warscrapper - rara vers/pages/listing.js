@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Listing.module.css'
 import React from 'react'
 import { useRouter } from 'next/router'
@@ -67,8 +68,11 @@ export default function Listing() {
                 </div> */}
             </nav>
             <main className={styles.main}>
-                {/* Back to index <a> button*/}
-                <a href="/" className={styles.backbutton}>🡠 Back</a>
+                {/* Back to index button using <Link>*/}
+                <Link href="/">
+                    <a className={styles.backbutton}>🡠 Back</a>
+                </Link>
+                
                 <Get url={axiosURL} >
                     {(error, response, isLoading, makeRequest, axios) => {
                         if (error) {
