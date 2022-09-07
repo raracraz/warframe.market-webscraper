@@ -12,7 +12,7 @@ export default function Listing() {
 
     if (searchvalue === undefined) return null;
     // fetch data from api using axios
-    var axiosURL = 'http://localhost:3000/api/items/' + searchvalue;
+    var axiosURL = 'https://warframe-market-webscraper.vercel.app' + searchvalue;
     const columns = [
         {
             name: 'Username',
