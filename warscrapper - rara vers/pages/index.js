@@ -4,10 +4,7 @@ import styles from '../styles/Home.module.css'
 import { useState, useEffect, useReducer } from 'react'
 import allitems from "./allitems.json"
 
-
-
 export default function Home() {
-    
     const [returnHTML, setReturnHTML] = useState("")
     const handleclick = () => {
         // get value of searchvalue by id
@@ -36,7 +33,7 @@ export default function Home() {
         }
         var count = 0;
         suggestions.map(suggestion => {
-            tmpreturnHTML += "<a class='suggestionitem' href='/listing?searchvalue=" + rawsuggestions[count] + "'><p class='suggestionitemword'>" + suggestion + "</p></a>";
+            tmpreturnHTML += "<a class='suggestionitem' href='/listing?searchvalue=" + rawsuggestions[count] +"'><p class='suggestionitemword'>" + suggestion + "</p></a>";
             count += 1;
             // replace all " with spaces
             tmpreturnHTML = tmpreturnHTML.replace(/"/g, " ");

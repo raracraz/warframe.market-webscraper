@@ -41,11 +41,36 @@
     background-color: linear-gradient(90deg, #1B1D52 0%, #612525 100%);
 }
 
+.backbutton{
+    position: absolute;
+    padding-top: 5em;
+    padding-left: 4em;
+    font-size: 1em;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.backbutton:hover{
+    position: absolute;
+    color: #636363;
+    text-decoration: none;
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
 .gridTable {
-    padding-top:6em;
+    padding-top: 5em;
     padding-left: 5em;
     padding-right: 5em;
-    width: 100%;
+    padding-bottom: 8em;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     color: black;
 }
 

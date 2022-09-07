@@ -5,6 +5,7 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import DataTable from 'react-data-table-component';
 import { AxiosProvider, Request, Get, Delete, AxiosHead, Post, Put, Patch, withAxios } from 'react-axios'
+import allitems from "./allitems.json"
 
 export default function Listing() {
     const router = useRouter();
@@ -14,6 +15,17 @@ export default function Listing() {
     // fetch data from api using axios
     var axiosURL = 'https://warframe-market-webscraper.vercel.app/api/items/' + searchvalue;
     // var axiosURL = 'http://localhost:3000/api/items/' + searchvalue;
+    // find searchvalue in allitems.json and find the item_name
+    var item_name = "";
+    for (var i = 0; i < allitems.length; i++) {
+        try{
+            if (allitems[i].url_name === searchvalue) {
+                item_name = allitems[i].item_name;
+            }
+        } catch (e) {
+            item_name = "Item not found";
+        }
+    }
 
     const columns = [
         {
@@ -49,12 +61,14 @@ export default function Listing() {
             </Head>
             <nav className={styles.navbar}>
                 <Image className={styles.logo} src="/favicon.ico" alt="War Scrapper Logo" width={60} height={60} />
-                <div className={styles.navbar__links}>
+                {/* <div className={styles.navbar__links}>
                     <a href='#' className={styles.navbar__link}>Sign up</a>
                     <a href='#' className={styles.navbar__link}>Log in</a>
-                </div>
+                </div> */}
             </nav>
             <main className={styles.main}>
+                {/* Back to index <a> button*/}
+                <a href="/" className={styles.backbutton}>🡠 Back</a>
                 <Get url={axiosURL} >
                     {(error, response, isLoading, makeRequest, axios) => {
                         if (error) {
@@ -67,12 +81,13 @@ export default function Listing() {
                             return (
                                 <div className={styles.gridTable}>
                                     <DataTable
-                                        title={searchvalue}
+                                        title={item_name}
                                         columns={columns}
                                         data={response.data}
                                         // set pagination to true and limit to 5 rows
                                         pagination
                                         paginationPerPage={5}
+                                        paginationRowsPerPageOptions={[5, 10, 15, 20, 25]}
                                         highlightOnHover={true}
                                         // change style to striped
                                         striped={true}
