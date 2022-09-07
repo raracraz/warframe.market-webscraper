@@ -3,9 +3,7 @@ import Image from 'next/image'
 import styles from '../styles/Listing.module.css'
 import React from 'react'
 import { useRouter } from 'next/router'
-import { useEffect, useState, useRef } from 'react'
 import DataTable from 'react-data-table-component';
-
 import { AxiosProvider, Request, Get, Delete, AxiosHead, Post, Put, Patch, withAxios } from 'react-axios'
 
 export default function Listing() {
