@@ -5,7 +5,9 @@ import { useState, useEffect, useReducer } from 'react'
 import allitems from "./allitems.json"
 
 
+
 export default function Home() {
+    
     const [returnHTML, setReturnHTML] = useState("")
     const handleclick = () => {
         // get value of searchvalue by id

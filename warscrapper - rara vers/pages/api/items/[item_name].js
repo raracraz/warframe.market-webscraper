@@ -3,19 +3,6 @@ const fs = require('fs');
 const express = require('express');
 var app = express();
 
-// var itemJson = {
-//   "quantity": 50,
-//   "order_type": "sell",
-//   "platinum": 1,
-//   "user": {
-//     "ingame_name": "TalesNexus",
-//     "status": "ingame"
-//   },
-//   "platform": "pc",
-//   "region": "en",
-//   "mod_rank": 0
-// };
-
 var returnJson = {};
 
 // make a json object with itemJson as the template
