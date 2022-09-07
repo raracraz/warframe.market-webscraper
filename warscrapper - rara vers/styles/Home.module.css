@@ -124,13 +124,27 @@
   cursor: pointer;
 }
 
+.suggestions {
+  padding-top: 3em;
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-bottom: 7em;
+}
+
+.suggestionitemsbox{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .footer {
   display: flex;
   padding: 2rem;
   background-color: #212121;
   /* footer should always be at the bottom */
-  position: absolute;
   bottom: 0;
+  position: fixed;
   width: 100%;
 }
 

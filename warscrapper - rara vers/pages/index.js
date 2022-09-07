@@ -1,34 +1,15 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import { useState, useEffect, useReducer } from 'react'
+import allitems from "./allitems.json"
+
 
 export default function Home() {
-    const getApiData = async (item_names) => {
-        const response = await fetch('http://localhost:3000/api/items/' + item_names);
-        const data = await response.json()
-        return data
-    }
-
-    // const [item_name, setItemName] = useState('')
-    // console.log(item_name)
-
-    // useEffect(() => {
-    //     const data = getApiData("hells_chamber")
-    // }, [])
-
+    const [returnHTML, setReturnHTML] = useState("")
     const handleclick = () => {
         // get value of searchvalue by id
         const searchvalue = document.getElementById("searchvalue").value
-        // console.log(searchvalue)
-        // const data = getApiData(searchvalue)
-        
-        // if (data == null) alert("No data found")
-        // else console.log(data)
-
-        // return data
-        // redirect to /listing with searchvalue as query parameter
         window.location.href = '/listing?searchvalue=' + searchvalue
     }
 
@@ -36,6 +17,32 @@ export default function Home() {
         if (event.key === "Enter") {
             handleclick()
         }
+    }
+
+    const handleTextChange = () => {
+        var suggestions = [];
+        var rawsuggestions = [];
+        var tmpreturnHTML = "";
+        var searchvalue = document.getElementById("searchvalue").value;
+        if (searchvalue.length > 0) {
+            for (var i = 0; i < allitems.length; i++) {
+                if (allitems[i].item_name.toLowerCase().includes(searchvalue.toLowerCase())) {
+                    suggestions.push(allitems[i].item_name);
+                    rawsuggestions.push(allitems[i].url_name);
+                }
+            }
+        }
+        var count = 0;
+        suggestions.map(suggestion => {
+            tmpreturnHTML += "<a class='suggestionitem' href='/listing?searchvalue=" + rawsuggestions[count] + "'><p class='suggestionitemword'>" + suggestion + "</p></a>";
+            count += 1;
+            // replace all " with spaces
+            tmpreturnHTML = tmpreturnHTML.replace(/"/g, " ");
+        })
+        // add styling to the suggestions
+        tmpreturnHTML += "<style>.suggestionitem{background-color:#ffffff; flex-basis:20%; border-radius:5px; margin:7px; transition: all 0.2s ease-in-out;} .suggestionitemword{text-align:center;} .suggestionitem:hover{background-color: #636363;transition: all 0.2s ease-in-out;}</style>";
+        // append returnHTML to suggestions div 
+        setReturnHTML(tmpreturnHTML);
     }
 
     return (
@@ -66,12 +73,15 @@ export default function Home() {
                             </div>
                         </div>
                         <div className={styles.searchbar}>
-                            <input id='searchvalue' type="text" className={styles.searchbar__input} placeholder="Search for an item" onKeyPress={onKeyUp}/>
+                            <input id='searchvalue' type="text" className={styles.searchbar__input} placeholder="Search for an item" onKeyPress={onKeyUp} onChange={handleTextChange} />
                             <button id='searchbtn' className={styles.searchbar__button} onClick={handleclick}>Search</button>
+                            {/* dropdown for the input */}
                         </div>
                     </div>
                 </div>
-                {/* search bar */}
+                <div id='suggestions' className={styles.suggestions}>
+                    <div className={styles.suggestionitemsbox} dangerouslySetInnerHTML={{ __html: returnHTML }} />
+                </div>
             </main>
             <footer className={styles.footer}>
                 <div className={styles.copyright}>
@@ -85,5 +95,6 @@ export default function Home() {
                 </a>
             </footer>
         </div>
+        
     )
 }

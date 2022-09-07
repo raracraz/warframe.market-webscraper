@@ -54,7 +54,7 @@
     padding: 2rem;
     background-color: #212121;
     /* footer should always be at the bottom */
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
 }

@@ -1,8 +1,0 @@
-a = 'JWT=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaWQiOiJBT0dldTJUTTJabUdtdVhpTVFFV05zeEswYXdsQmVqVCIsImV4cCI6MTY2Njg0NDg0NSwiaWF0IjoxNjYxNjYwODQ1LCJpc3MiOiJqd3QiLCJhdWQiOiJqd3QiLCJhdXRoX3R5cGUiOiJjb29raWUifQ._CSqMbf1CTi6MIAbofnFMfrf49Pf0_00uuFceB88s34'
-b = 'JWT=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzaWQiOiJBT0dldTJUTTJabUdtdVhpTVFFV05zeEswYXdsQmVqVCIsImV4cCI6MTY2Njg0NDQ3MiwiaWF0IjoxNjYxNjYwNDcyLCJpc3MiOiJqd3QiLCJhdWQiOiJqd3QiLCJhdXRoX3R5cGUiOiJjb29raWUifQ.diQ2qLvK-KWJpsgUTwQyJbV3JjjN1LOsqMP5uIe0Cuw'
-
-if(a == b){
-    console.log('true')
-} else {
-    console.log('false')
-}
