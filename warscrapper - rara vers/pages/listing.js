@@ -5,7 +5,6 @@ import React from 'react'
 import { useRouter } from 'next/router'
 import DataTable from 'react-data-table-component';
 import { AxiosProvider, Request, Get, Delete, AxiosHead, Post, Put, Patch, withAxios } from 'react-axios'
-import { header } from 'next.config.js'
 
 export default function Listing() {
     const router = useRouter();
