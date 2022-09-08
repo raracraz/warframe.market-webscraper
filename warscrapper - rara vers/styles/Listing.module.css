@@ -38,12 +38,13 @@
 
 .main {
     position: relative;
-    background-color: linear-gradient(90deg, #1B1D52 0%, #612525 100%);
+    padding-top: 5em;
+    /* background-color: linear-gradient(90deg, #1B1D52 0%, #612525 100%); */
+    background: linear-gradient(#1B1D52 0%, #2f2525 100%);
 }
 
 .backbutton{
     position: absolute;
-    padding-top: 5em;
     padding-left: 4em;
     font-size: 1em;
     color: #ffffff;
@@ -64,7 +65,7 @@
 }
 
 .gridTable {
-    padding-top: 5em;
+    padding-top: 0.5em;
     padding-left: 5em;
     padding-right: 5em;
     padding-bottom: 8em;
@@ -72,6 +73,52 @@
     margin-left: auto;
     margin-right: auto;
     color: black;
+}
+
+.error{
+    position: absolute;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 3em;
+    background-color: #ffffff;
+    border-radius: 0.5em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: #000000;
+    text-decoration: none;
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.loading{
+    position: absolute;
+    padding-right: 2em;
+    padding-left: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 3em;
+    background-color: #ffffff;
+    border-radius: 0.5em;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: #000000;
+    text-decoration: none;
+    font-family: "montserrat", sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+.table{
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
 }
 
 .footer {

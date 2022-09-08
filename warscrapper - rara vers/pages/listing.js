@@ -76,10 +76,13 @@ export default function Listing() {
                 <Get url={axiosURL} >
                     {(error, response, isLoading, makeRequest, axios) => {
                         if (error) {
-                            return (<div>Something bad happened: {error.message}</div>)
+                            setTimeout(() => {
+                                router.push("/");
+                            }, 3000);
+                            return (<div className={styles.error}>Something bad happened...</div>)
                         }
                         else if (isLoading) {
-                            return (<div>Loading...</div>)
+                            return (<div className={styles.loading}>Loading...</div>)
                         }
                         else if (response !== null) {
                             return (
@@ -95,6 +98,7 @@ export default function Listing() {
                                         highlightOnHover={true}
                                         // change style to striped
                                         striped={true}
+                                        className={styles.table}
                                     />
                                 </div>
                             )
