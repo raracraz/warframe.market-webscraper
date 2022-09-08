@@ -37,10 +37,20 @@
 }
 
 .main {
-    position: relative;
-    padding-top: 5em;
+    /* stretch the background to the whole screen */
+    padding-top: 4.5em;
     /* background-color: linear-gradient(90deg, #1B1D52 0%, #612525 100%); */
     background: linear-gradient(#1B1D52 0%, #2f2525 100%);
+    /* stretch the background to fit the whole screen */
+    height: 100vh;
+    /* make the background fixed */
+    background-attachment: fixed;
+    /* make the background cover the whole screen */
+    background-size: cover;
+    /* make the background repeat */
+    background-repeat: no-repeat;
+    /* make the background fixed */
+    background-position: center;
 }
 
 .backbutton{
