@@ -167,3 +167,55 @@
   padding-left: 0.5em;
   padding-right: 0.5em;
 }
+
+/* if media screen is phone make footer smaller*/
+@media screen and (max-width: 600px) {
+  .imageBody {
+    padding-top: 4em;
+  }
+
+  .image {
+    opacity: 0;
+  }
+
+  .title {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .searchbar__button {
+    width: 91.3%;
+    border-radius: 5px;
+  }
+
+  .searchbar__input {
+    border-radius: 5px;
+  }
+
+  .suggestions {
+    padding-top: 15em;
+  }
+
+  .suggestionitemsbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    /* make the items center */
+    padding-left: 1.5em;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: #212121;
+    /* footer should always be at the bottom */
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    /* center items */
+    align-items: center;
+  }
+}

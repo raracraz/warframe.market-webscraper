@@ -65,7 +65,6 @@ export default function Home() {
                     <div className={styles.search}>
                         <div className={styles.header}>
                             <div className={styles.title}>
-                                {/* <Image className={styles.headerlogo} src="/favicon.ico" alt="War Scrapper Logo" width={60} height={60} /> */}
                                 War Scrapper
                             </div>
                             <div className={styles.description}>
