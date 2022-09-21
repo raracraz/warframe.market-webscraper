@@ -184,12 +184,17 @@
   }
 
   .searchbar__button {
-    width: 91.3%;
+    width: 91%;
     border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .searchbar__input {
     border-radius: 5px;
+    width: 91%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .suggestions {
