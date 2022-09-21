@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
 
 export default function Tos() {
     return (
@@ -33,16 +34,16 @@ export default function Tos() {
 
                 <h2>2. Use License</h2>
 
-                <p>Permission is granted to temporarily download one copy of the materials on warscraper's Website for personal,
+                <p>Permission is granted to temporarily download one copy of the materials on warscraper&apos;s Website for personal,
                     non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this
                     license you may not:</p>
 
                 <ul>
                     <li>modify or copy the materials;</li>
                     <li>use the materials for any commercial purpose or for any public display;</li>
-                    <li>attempt to reverse engineer any software contained on warscraper's Website;</li>
+                    <li>attempt to reverse engineer any software contained on warscraper&apos;s Website;</li>
                     <li>remove any copyright or other proprietary notations from the materials; or</li>
-                    <li>transferring the materials to another person or "mirror" the materials on any other server.</li>
+                    <li>transferring the materials to another person or &quot;mirror&quot; the materials on any other server.</li>
                 </ul>
 
                 <p>This will let warscraper to terminate upon violations of any of these restrictions. Upon termination, your viewing
@@ -52,7 +53,7 @@ export default function Tos() {
 
                 <h2>3. Disclaimer</h2>
 
-                <p>All the materials on warscraper’s Website are provided "as is". warscraper makes no warranties, may it be expressed
+                <p>All the materials on warscraper&apos;s Website are provided &quot;as is&quot;. warscraper makes no warranties, may it be expressed
                     or implied, therefore negates all other warranties. Furthermore, warscraper does not make any representations
                     concerning the accuracy or reliability of the use of the materials on its Website or otherwise relating to such
                     materials or any sites linked to this Website.</p>
@@ -60,13 +61,13 @@ export default function Tos() {
                 <h2>4. Limitations</h2>
 
                 <p>warscraper or its suppliers will not be hold accountable for any damages that will arise with the use or inability to
-                    use the materials on warscraper's Website, even if warscraper or an authorize representative of this Website has
+                    use the materials on warscraper&apos;s Website, even if warscraper or an authorize representative of this Website has
                     been notified, orally or written, of the possibility of such damage. Some jurisdiction does not allow limitations on
                     implied warranties or limitations of liability for incidental damages, these limitations may not apply to you.</p>
 
                 <h2>5. Revisions and Errata</h2>
 
-                <p>The materials appearing on warscraper's Website may include technical, typographical, or photographic errors.
+                <p>The materials appearing on warscraper&apos;s Website may include technical, typographical, or photographic errors.
                     warscraper will not promise that any of the materials in this Website are accurate, complete, or current. warscraper
                     may change the materials contained on its Website at any time without notice. warscraper does not make any
                     commitment to update the materials.</p>
@@ -75,7 +76,7 @@ export default function Tos() {
 
                 <p>warscraper has not reviewed all of the sites linked to its Website and is not responsible for the contents of any
                     such linked site. The presence of any link does not imply endorsement by warscraper of the site. The use of any
-                    linked website is at the user's own risk.</p>
+                    linked website is at the user&apos;s own risk.</p>
 
                 <h2>7. Site Terms of Use Modifications</h2>
 
@@ -88,7 +89,7 @@ export default function Tos() {
 
                 <h2>9. Governing Law</h2>
 
-                <p>Any claim related to warscraper's Website shall be governed by the laws of sg without regards to its conflict of law
+                <p>Any claim related to warscraper&apos;s Website shall be governed by the laws of sg without regards to its conflict of law
                     provisions.</p>
             </main>
             <footer className={styles.footer}>
