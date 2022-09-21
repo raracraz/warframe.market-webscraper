@@ -111,9 +111,9 @@ export default function Listing() {
                 <div className={styles.copyright}>
                     2022 © WarScrapper
                 </div>
-                <a href='https://warframe-market-webscraper.vercel.app/tos.html' className={styles.tos}>
-                    Terms of Service
-                </a>
+                <Link href="/tos">
+                    <a className={styles.tos}>Terms of Service</a>
+                </Link>
                 <a href='https://warframe.market' className={styles.warframemarket}>
                     Warframe Market
                 </a>

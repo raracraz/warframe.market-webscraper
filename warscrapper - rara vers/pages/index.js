@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { useState, useEffect, useReducer } from 'react'
 import allitems from "./allitems.json"
@@ -85,9 +86,9 @@ export default function Home() {
                 <div className={styles.copyright}>
                     2022 © WarScrapper
                 </div>
-                <a href='/tos' className={styles.tos}>
-                    Terms of Service
-                </a>
+                <Link href="/tos">
+                    <a className={styles.tos}>Terms of Service</a>
+                </Link>
                 <a href='https://warframe.market' className={styles.warframemarket}>
                     Warframe Market
                 </a>
