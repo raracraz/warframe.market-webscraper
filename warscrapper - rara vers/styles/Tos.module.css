@@ -1,0 +1,39 @@
+.container{
+    background-color:white;
+    margin-top: -2%;
+}
+
+.main {
+    padding-left: 5em;
+    padding-right: 5em;
+    color: black;
+}
+
+.footer {
+    display: flex;
+    padding: 2rem;
+    background-color: #212121;
+    /* footer should always be at the bottom */
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.copyright {
+    color: #ffffff;
+    flex: 1;
+}
+
+.tos {
+    color: #636363;
+    float: right;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+.warframemarket {
+    color: #636363;
+    float: right;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}

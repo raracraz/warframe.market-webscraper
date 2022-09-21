@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Tos.module.css'
 import Link from 'next/link'
 
 export default function Tos() {
@@ -15,13 +15,6 @@ export default function Tos() {
                     rel="stylesheet"
                 />
             </Head>
-            <nav className={styles.navbar}>
-                <Image className={styles.logo} src="/favicon.ico" alt="War Scrapper Logo" width={60} height={60} />
-                {/* <div className={styles.navbar__links}>
-                    <a href='#' className={styles.navbar__link}>Sign up</a>
-                    <a href='#' className={styles.navbar__link}>Log in</a>
-                </div> */}
-            </nav>
             <main className={styles.main}>
                 <h1>Website Terms and Conditions of Use</h1>
 
