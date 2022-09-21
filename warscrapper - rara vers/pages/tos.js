@@ -60,13 +60,13 @@ export default function Tos() {
                 <h2>4. Limitations</h2>
 
                 <p>warscraper or its suppliers will not be hold accountable for any damages that will arise with the use or inability to
-                    use the materials on warscraper’s Website, even if warscraper or an authorize representative of this Website has
+                    use the materials on warscraper's Website, even if warscraper or an authorize representative of this Website has
                     been notified, orally or written, of the possibility of such damage. Some jurisdiction does not allow limitations on
                     implied warranties or limitations of liability for incidental damages, these limitations may not apply to you.</p>
 
                 <h2>5. Revisions and Errata</h2>
 
-                <p>The materials appearing on warscraper’s Website may include technical, typographical, or photographic errors.
+                <p>The materials appearing on warscraper's Website may include technical, typographical, or photographic errors.
                     warscraper will not promise that any of the materials in this Website are accurate, complete, or current. warscraper
                     may change the materials contained on its Website at any time without notice. warscraper does not make any
                     commitment to update the materials.</p>
@@ -75,7 +75,7 @@ export default function Tos() {
 
                 <p>warscraper has not reviewed all of the sites linked to its Website and is not responsible for the contents of any
                     such linked site. The presence of any link does not imply endorsement by warscraper of the site. The use of any
-                    linked website is at the user’s own risk.</p>
+                    linked website is at the user's own risk.</p>
 
                 <h2>7. Site Terms of Use Modifications</h2>
 
@@ -92,17 +92,16 @@ export default function Tos() {
                     provisions.</p>
             </main>
             <footer className={styles.footer}>
-                <a
-                    href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Powered by{' '}
-                    <span className={styles.logo}>
-                        <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-                    </span>
+                <div className={styles.copyright}>
+                    2022 © WarScrapper
+                </div>
+                <Link href="/tos">
+                    <a className={styles.tos}>Terms of Service</a>
+                </Link>
+                <a href='https://warframe.market' className={styles.warframemarket}>
+                    Warframe Market
                 </a>
-            </footer>
+            </footer>   
         </div>
     )
 }
