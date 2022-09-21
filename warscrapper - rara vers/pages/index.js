@@ -74,7 +74,6 @@ export default function Home() {
                         <div className={styles.searchbar}>
                             <input id='searchvalue' type="text" className={styles.searchbar__input} placeholder="Search for an item" onKeyPress={onKeyUp} onChange={handleTextChange} />
                             <button id='searchbtn' className={styles.searchbar__button} onClick={handleclick}>Search</button>
-                            {/* dropdown for the input */}
                         </div>
                     </div>
                 </div>
@@ -86,7 +85,7 @@ export default function Home() {
                 <div className={styles.copyright}>
                     2022 © WarScrapper
                 </div>
-                <a href='#' className={styles.tos}>
+                <a href='https://warframe-market-webscraper.vercel.app/tos.html' className={styles.tos}>
                     Terms of Service
                 </a>
                 <a href='https://warframe.market' className={styles.warframemarket}>

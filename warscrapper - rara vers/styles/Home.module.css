@@ -55,6 +55,8 @@
   float: right;
 }
 
+/* if the user is using a phone */
+
 .search {
   z-index: 5;
   grid-row: 1;

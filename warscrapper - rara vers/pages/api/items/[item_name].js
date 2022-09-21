@@ -34,7 +34,6 @@ export default (req, res) => {
   axios.get(warframe_market_url, options)
     .then(function (response) {
       var unfiltered_orders = response.data.payload.orders;
-      var counter = 1;
       var y = 0;
 
       //filter orders
