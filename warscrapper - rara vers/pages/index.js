@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import { useState, useEffect, useReducer } from 'react'
 import allitems from "./allitems.json"
@@ -64,7 +65,6 @@ export default function Home() {
                     <div className={styles.search}>
                         <div className={styles.header}>
                             <div className={styles.title}>
-                                {/* <Image className={styles.headerlogo} src="/favicon.ico" alt="War Scrapper Logo" width={60} height={60} /> */}
                                 War Scrapper
                             </div>
                             <div className={styles.description}>
@@ -74,7 +74,6 @@ export default function Home() {
                         <div className={styles.searchbar}>
                             <input id='searchvalue' type="text" className={styles.searchbar__input} placeholder="Search for an item" onKeyPress={onKeyUp} onChange={handleTextChange} />
                             <button id='searchbtn' className={styles.searchbar__button} onClick={handleclick}>Search</button>
-                            {/* dropdown for the input */}
                         </div>
                     </div>
                 </div>
