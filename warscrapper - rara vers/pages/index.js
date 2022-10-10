@@ -53,7 +53,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <nav className={styles.navbar}>
-                <Image className={styles.logo} src="/favicon.ico" alt="War Scrapper Logo" width={60} height={60} />
+                {/* <Image className={styles.logo} src="/favicon.ico" alt="War Scrapper Logo" width={60} height={60} /> */}
                 {/* <div className={styles.navbar__links}>
                     <a href='#' className={styles.navbar__link}>Sign up</a>
                     <a href='#' className={styles.navbar__link}>Log in</a>
@@ -88,7 +88,7 @@ export default function Home() {
                 {/* <a href='https://warframe-market-webscraper.vercel.app/tos.html' className={styles.tos}>
                     Terms of Service
                 </a> */}
-                <a href='http://localhost:3000/tos' className={styles.tos}>
+                <a href='/tos' className={styles.tos}>
                     Terms of Service
                 </a>
                 <a href='https://warframe.market' className={styles.warframemarket}>

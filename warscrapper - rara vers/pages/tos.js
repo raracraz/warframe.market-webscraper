@@ -1,3 +1,4 @@
+import styles from '../styles/Tos.module.css'
 export default function Tos() {
     return (
         <html lang="en">
