@@ -1,18 +1,17 @@
 export default function Tos() {
     return (
-
         <html lang="en">
             <title>Terms and Conditions for Warscraper - TermsFeed</title>
             <body>
-                <div class="page">
-                    <div class="header">
-                        <div class="container">
-                            <p class="title">Terms and Conditions for Warscraper</p>
+                <div className="page">
+                    <div className="header">
+                        <div className="container">
+                            <p className="title">Terms and Conditions for Warscraper</p>
                         </div>
                     </div>
-                    <div class="translations-content-container">
-                        <div class="container">
-                            <div class="tab-content translations-content-item en visible" id="en">
+                    <div className="translations-content-container">
+                        <div className="container">
+                            <div className="tab-content translations-content-item en visible" id="en">
                                 <h1>Terms and Conditions</h1>
                                 <p>Last updated: September 16, 2022</p>
                                 <p>Please read these terms and conditions carefully before using Our Service.</p>
@@ -93,14 +92,14 @@ export default function Tos() {
                                 <h1>Contact Us</h1>
                                 <p>If you have any questions about these Terms and Conditions, You can contact us:</p>
                                 <ul>
-                                    <li>By email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="addfd4ccc383ccccc4d5c8edcac0ccc4c183cec2c0">[email&#160;protected]</a></li>
+                                    <li>By email: <a href="/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="addfd4ccc383ccccc4d5c8edcac0ccc4c183cec2c0">[email&#160;protected]</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <div class="footer">
-                        <div class="container">
+                    <div className="footer">
+                        <div className="container">
                             <p>Generated using <a href="https://www.termsfeed.com/privacy-policy-generator/" target="_blank">TermsFeed Privacy Policy Generator</a></p>
                         </div>
                     </div>

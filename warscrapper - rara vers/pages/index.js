@@ -88,7 +88,7 @@ export default function Home() {
                 {/* <a href='https://warframe-market-webscraper.vercel.app/tos.html' className={styles.tos}>
                     Terms of Service
                 </a> */}
-                <a href='http://localhost:3000/tos.html' className={styles.tos}>
+                <a href='http://localhost:3000/tos' className={styles.tos}>
                     Terms of Service
                 </a>
                 <a href='https://warframe.market' className={styles.warframemarket}>
