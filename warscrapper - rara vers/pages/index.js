@@ -65,7 +65,7 @@ export default function Home() {
                     <div className={styles.search}>
                         <div className={styles.header}>
                             <div className={styles.title}>
-                                War Scrapper
+                                War Scraper
                             </div>
                             <div className={styles.description}>
                                 Get details on all the lowest priced items
